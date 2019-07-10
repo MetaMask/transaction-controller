@@ -1,0 +1,26 @@
+{
+  "name": "transaction-controller",
+  "version": "0.0.0",
+  "description": "Transaction Controller is an aggregate of sub-controllers and trackers exposed to the MetaMask controller.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MetaMask/transaction-controller.git"
+  },
+  "keywords": [
+    "metamask"
+  ],
+  "author": "frankiebee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MetaMask/transaction-controller/issues"
+  },
+  "homepage": "https://github.com/MetaMask/transaction-controller#readme"
+}
