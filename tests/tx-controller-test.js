@@ -12,8 +12,8 @@ const {
   SEND_ETHER_ACTION_KEY,
   DEPLOY_CONTRACT_ACTION_KEY,
   CONTRACT_INTERACTION_KEY,
-} = require('../constants')
-const { createTestProviderTools, getTestAccounts } = require('./stub/provider')
+} = require('../lib/constants')
+const { createTestProviderTools, getTestAccounts } = require('./helpers/provider')
 
 const noop = () => true
 const currentNetworkId = 42
@@ -622,7 +622,7 @@ describe('Transaction Controller', function () {
     })
   })
 
-  describe('#getPendingTransactions', function () {
+  xdescribe('#getPendingTransactions', function () {
     beforeEach(function () {
       txController.txStateManager._saveTxList([
 
@@ -635,6 +635,7 @@ describe('Transaction Controller', function () {
         { id: 7, status: 'failed', metamaskNetworkId: currentNetworkId, txParams: { from: '0x1678a085c290ebd122dc42cba69373b5953b831d' }, history: [{}] },
       ])
     })
+
     it('should show only submitted and approved transactions as pending transasction', function () {
       assert(txController.txStateManager.getPendingTransactions().length, 2)
       const states = txController.txStateManager.getPendingTransactions().map(tx => tx.status)
