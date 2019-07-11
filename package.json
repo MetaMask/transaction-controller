@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/*.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,24 @@
   "bugs": {
     "url": "https://github.com/MetaMask/transaction-controller/issues"
   },
-  "homepage": "https://github.com/MetaMask/transaction-controller#readme"
+  "homepage": "https://github.com/MetaMask/transaction-controller#readme",
+  "devDependencies": {
+    "eth-keyring-controller": "^4.0.1",
+    "ganache-core": "^2.5.7",
+    "mocha": "^6.1.4",
+    "sinon": "^7.3.2"
+  },
+  "dependencies": {
+    "abi-decoder": "^2.0.1",
+    "clone": "^2.1.2",
+    "ethereumjs-tx": "^2.1.0",
+    "ethereumjs-util": "^6.1.0",
+    "ethjs-query": "^0.3.8",
+    "fast-json-patch": "^2.1.0",
+    "human-standard-token-abi": "^2.0.0",
+    "loglevel": "^1.6.3",
+    "nonce-tracker": "^1.0.0",
+    "obs-store": "^4.0.2",
+    "safe-event-emitter": "^1.0.1"
+  }
 }

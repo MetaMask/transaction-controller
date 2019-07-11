@@ -1,5 +1,5 @@
 const assert = require('assert')
-const txUtils = require('../../../../../app/scripts/controllers/transactions/lib/util')
+const txUtils = require('../lib/util')
 
 
 describe('txUtils', function () {

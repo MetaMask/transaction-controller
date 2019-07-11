@@ -1,13 +1,11 @@
 const assert = require('assert')
-const recipientBlackListChecker = require('../../../../../app/scripts/controllers/transactions/lib/recipient-blacklist-checker')
-const {
-  ROPSTEN_CODE,
-  RINKEYBY_CODE,
-  KOVAN_CODE,
-  GOERLI_CODE,
-} = require('../../../../../app/scripts/controllers/network/enums')
-
+const recipientBlackListChecker = require('../lib/recipient-blacklist-checker')
 const KeyringController = require('eth-keyring-controller')
+
+const ROPSTEN_CODE = 3
+const RINKEYBY_CODE = 4
+const KOVAN_CODE = 42
+const GOERLI_CODE = 5
 
 describe('Recipient Blacklist Checker', function () {
 

@@ -2,8 +2,8 @@ const assert = require('assert')
 const Transaction = require('ethereumjs-tx')
 
 
-const { hexToBn, bnToHex } = require('../../../../../app/scripts/lib/util')
-const TxUtils = require('../../../../../app/scripts/controllers/transactions/tx-gas-utils')
+const { hexToBn, bnToHex } = require('../lib/util')
+const TxUtils = require('../lib/tx-gas-utils')
 
 
 describe('txUtils', function () {

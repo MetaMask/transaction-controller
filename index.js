@@ -5,6 +5,9 @@ const Transaction = require('ethereumjs-tx')
 const EthQuery = require('ethjs-query')
 const abi = require('human-standard-token-abi')
 const abiDecoder = require('abi-decoder')
+const log = require('loglevel')
+const NonceTracker = require('nonce-tracker')
+
 abiDecoder.addABI(abi)
 const {
   TOKEN_METHOD_APPROVE,
@@ -13,23 +16,19 @@ const {
   SEND_ETHER_ACTION_KEY,
   DEPLOY_CONTRACT_ACTION_KEY,
   CONTRACT_INTERACTION_KEY,
-} = require('../../../../ui/app/helpers/constants/transactions.js')
-const TransactionStateManager = require('./tx-state-manager')
-const TxGasUtil = require('./tx-gas-utils')
-const PendingTransactionTracker = require('./pending-tx-tracker')
-const NonceTracker = require('nonce-tracker')
-const txUtils = require('./lib/util')
-const cleanErrorStack = require('../../lib/cleanErrorStack')
-const log = require('loglevel')
-const recipientBlacklistChecker = require('./lib/recipient-blacklist-checker')
-const {
   TRANSACTION_TYPE_CANCEL,
   TRANSACTION_TYPE_RETRY,
   TRANSACTION_TYPE_STANDARD,
   TRANSACTION_STATUS_APPROVED,
-} = require('./enums')
+} = require('./constants')
+const TransactionStateManager = require('./lib/tx-state-manager')
+const TxGasUtil = require('./lib/tx-gas-utils')
+const PendingTransactionTracker = require('./lib/pending-tx-tracker')
+const txUtils = require('./lib/util')
+const { hexToBn, bnToHex, BnMultiplyByFraction } = txUtils
+const cleanErrorStack = require('./lib/cleanErrorStack')
+const recipientBlacklistChecker = require('./lib/recipient-blacklist-checker')
 
-const { hexToBn, bnToHex, BnMultiplyByFraction } = require('../../lib/util')
 
 /**
   Transaction Controller is an aggregate of sub-controllers and trackers
