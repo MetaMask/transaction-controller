@@ -20,7 +20,7 @@ const {
   TRANSACTION_TYPE_RETRY,
   TRANSACTION_TYPE_STANDARD,
   TRANSACTION_STATUS_APPROVED,
-} = require('./constants')
+} = require('./lib/constants')
 const TransactionStateManager = require('./lib/tx-state-manager')
 const TxGasUtil = require('./lib/tx-gas-utils')
 const PendingTransactionTracker = require('./lib/pending-tx-tracker')

@@ -1,9 +1,9 @@
 const assert = require('assert')
 const sinon = require('sinon')
 
-const { createTestProviderTools } = require('./stub/provider')
+const { createTestProviderTools } = require('./helpers/provider')
 const PendingTransactionTracker = require('../lib/pending-tx-tracker')
-const MockTxGen = require('./stub/mock-tx-gen')
+const MockTxGen = require('./helpers/mock-tx-gen')
 
 
 describe('PendingTransactionTracker', function () {
